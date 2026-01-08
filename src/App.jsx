@@ -27,12 +27,12 @@ function App() {
   ]
 
   const services = [
-    'Web Applications',
-    'Mobile Apps (iOS & Android)',
-    'Progressive Web Apps (PWA)',
-    'E-commerce Solutions',
-    'Custom Software Development',
-    'API Development & Integration'
+    { name: 'Web Applications', icon: '🌐', description: 'Modern, responsive web apps' },
+    { name: 'Mobile Apps', icon: '📱', description: 'iOS & Android applications' },
+    { name: 'Progressive Web Apps', icon: '💻', description: 'Fast, app-like experiences' },
+    { name: 'E-commerce Solutions', icon: '🛒', description: 'Online stores & payment systems' },
+    { name: 'Custom Software', icon: '⚙️', description: 'Tailored business solutions' },
+    { name: 'API Development', icon: '🔌', description: 'Backend & integrations' }
   ]
 
   const handleWhatsAppClick = () => {
@@ -53,11 +53,31 @@ function App() {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
+          <div className="hero-badge">👋 Welcome to my portfolio</div>
           <h1 className="hero-title">Shrinidhi Katti</h1>
           <p className="hero-subtitle">Full Stack Developer & Software Engineer</p>
           <p className="hero-description">
-            Building digital experiences that make a difference
+            Transforming ideas into powerful digital solutions. Specialized in building
+            scalable web applications, mobile apps, and custom software that drive business growth.
           </p>
+          <div className="hero-cta">
+            <a href="#projects" className="cta-primary">View My Work</a>
+            <a href="#contact" className="cta-secondary">Get In Touch</a>
+          </div>
+          <div className="hero-stats">
+            <div className="stat-item">
+              <div className="stat-number">5+</div>
+              <div className="stat-label">Years Experience</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">10+</div>
+              <div className="stat-label">Projects Completed</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">100%</div>
+              <div className="stat-label">Client Satisfaction</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -71,8 +91,9 @@ function App() {
           <div className="services-grid">
             {services.map((service, index) => (
               <div key={index} className="service-card">
-                <div className="service-icon">⚡</div>
-                <h3>{service}</h3>
+                <div className="service-icon">{service.icon}</div>
+                <h3>{service.name}</h3>
+                <p className="service-description">{service.description}</p>
               </div>
             ))}
           </div>
@@ -80,7 +101,7 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section className="projects">
+      <section className="projects" id="projects">
         <div className="container">
           <h2 className="section-title">Live Projects</h2>
           <p className="section-subtitle">
@@ -111,7 +132,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="contact">
+      <section className="contact" id="contact">
         <div className="container">
           <h2 className="section-title">Let's Work Together</h2>
           <p className="section-subtitle">
